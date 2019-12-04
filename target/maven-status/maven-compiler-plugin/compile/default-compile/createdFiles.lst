@@ -1,0 +1,11 @@
+cs\a_ement_soap\model\Student.class
+cs\a_ement_soap\service\PaksaService.class
+cs\a_ement_soap\service\ImpPaksaService.class
+cs\a_ement_soap\Data.class
+cs\a_ement_soap\service\ImpEnrollmentService.class
+cs\a_ement_soap\service\ImpStudentService.class
+cs\a_ement_soap\model\Paksa.class
+cs\a_ement_soap\model\Enrollment.class
+cs\a_ement_soap\service\StudentService.class
+cs\a_ement_soap\service\EnrollmentService.class
+cs\a_ement_soap\App.class
