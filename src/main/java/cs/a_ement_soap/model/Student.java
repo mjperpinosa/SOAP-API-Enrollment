@@ -9,17 +9,6 @@ public class Student {
 	private String course;
 	private int yearLevel;
 	
-	public Student(int studentNumber, int age, String firstName, String lastName, String gender, String course,
-			int yearLevel) {
-		this.studentNumber = studentNumber;
-		this.age = age;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.gender = gender;
-		this.course = course;
-		this.yearLevel = yearLevel;
-	}
-	
 	public int getStudentNumber() {
 		return studentNumber;
 	}

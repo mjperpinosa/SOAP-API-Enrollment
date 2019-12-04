@@ -4,11 +4,6 @@ public class Enrollment {
 	private int studentNumber;
 	private String paksaCode;
 	
-	public Enrollment(int studentNumber, String paksaCode) {
-		this.studentNumber = studentNumber;
-		this.paksaCode = paksaCode;
-	}
-	
 	public int getStudentNumber() {
 		return studentNumber;
 	}

@@ -14,7 +14,14 @@ public class ImpEnrollmentService implements EnrollmentService {
 	}
 
 	public String dropEnrollment(Enrollment enrollment) {
-		Data.enrollments.remove(enrollment);
+		int index = -1;
+		for(int i = 0; i < Data.enrollments.size(); i++) {
+			if(enrollment.getPaksaCode().equalsIgnoreCase(Data.enrollments.get(i).getPaksaCode()) && enrollment.getStudentNumber() == Data.enrollments.get(i).getStudentNumber()) {
+				index = i;
+				break;
+			}
+		}
+		Data.enrollments.remove(index);
 		
 		return "Student with number " + enrollment.getStudentNumber() + " has dropped the subject with code " + enrollment.getPaksaCode() + "."; 
 	}
