@@ -14,7 +14,7 @@ public interface PaksaService {
 
 	@WebMethod(operationName="addPaksa")
 	@WebResult(name="Paksa")
-	public String addPaksa(@WebParam(name="paksa") Paksa paksa);
+	public String addPaksa(@WebParam(name="paksa") List<Paksa> paksa);
 	
 	@WebMethod(operationName="getEnrolledPaksa")
 	@WebResult(name="Paksa")

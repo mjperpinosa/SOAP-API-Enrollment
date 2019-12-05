@@ -4,13 +4,20 @@ import java.util.List;
 
 import cs.a_ement_soap.Data;
 import cs.a_ement_soap.model.Enrollment;
+import cs.a_ement_soap.model.Paksa;
 
 public class ImpEnrollmentService implements EnrollmentService {
-
-	public String addEnrollment(Enrollment enrollment) {
-		Data.enrollments.add(enrollment);
+	
+	public String addEnrollment(int studentNumber, List<String> paksaCodesToEnroll) {
+		Enrollment ement;
+		for(String paksaCode : paksaCodesToEnroll) {
+			ement = new Enrollment();
+			ement.setPaksaCode(paksaCode);
+			ement.setStudentNumber(studentNumber);
+			Data.enrollments.add(ement);
+		}
 		
-		return "Student with number " + enrollment.getStudentNumber() + " has enrolled the subject with code " + enrollment.getPaksaCode() + ".";
+		return "Paksa successfully enrolled.";
 	}
 
 	public String dropEnrollment(Enrollment enrollment) {
@@ -28,6 +35,22 @@ public class ImpEnrollmentService implements EnrollmentService {
 
 	public List<Enrollment> findAllEnrollments() {
 		return Data.enrollments;
+	}
+
+	public String dropEnrollment(int studentNumber, List<String> paksaCodesToDrop) {
+		int index;
+		for(int i = 0; i < paksaCodesToDrop.size(); i++) {
+			index = -1;
+			for(int j = 0; j < Data.enrollments.size(); j++) {
+				if(paksaCodesToDrop.get(i).equalsIgnoreCase(Data.enrollments.get(j).getPaksaCode()) && studentNumber == Data.enrollments.get(j).getStudentNumber()) {
+					index = j;
+					break;
+				}
+			}
+			if(index != -1)
+				Data.enrollments.remove(index);
+		}
+		return "Paksa successfully dropped."; 
 	}
 
 }

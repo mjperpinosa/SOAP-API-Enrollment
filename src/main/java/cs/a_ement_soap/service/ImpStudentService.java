@@ -18,10 +18,11 @@ public class ImpStudentService implements StudentService {
 		
 		return allStudents;
 	}
-	
-	public String addStudent(Student student) {
-		Data.students.put(student.getStudentNumber()+"", student);
-		System.out.println("Student added.");
+
+	public String addStudent(List<Student> students) {
+		for(Student student : students) {
+			Data.students.put(String.valueOf(student.getStudentNumber()), student);
+		}
 		
 		return "New student has been added.";
 	}

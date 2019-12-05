@@ -14,7 +14,7 @@ import cs.a_ement_soap.model.Student;
 public interface StudentService {
 	@WebMethod(operationName="addStudent")
 	@WebResult(name="Student")
-	public String addStudent(@WebParam(name="student") Student student);
+	public String addStudent(@WebParam(name="student") List<Student> students);
 	
 	@WebMethod(operationName="findAllStudent")
 	@WebResult(name="Student")
